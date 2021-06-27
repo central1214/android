@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <translate
-        android:fromXDelta="+120%p"
-        android:toXDelta="-300%p"
-        android:duration="3000"
+        android:fromXDelta="+100%p"
+        android:toXDelta="-200%p"
+        android:duration="5000"
         android:repeatCount="1000"
         />
     <alpha
         android:fromAlpha="0.0"
         android:toAlpha="1.0"
-        android:duration="200"
+        android:duration="500"
         android:repeatCount="300000"
         />
 </set>

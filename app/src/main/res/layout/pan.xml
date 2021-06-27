@@ -1,54 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pan"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/main_image"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_weight="2">
         <TextView
             android:id="@+id/title_led"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="전광판 v1.0"
-            android:textSize="50dp"
-            android:layout_marginBottom="30dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="전광판에 나올 글을 입력해주세요."
+            android:text="Neon Sign"
+            android:textSize="100dp"
+            android:textColor="@color/white"
 
-        />
+            android:layout_marginTop="80dp"/>
+
     <EditText
-        android:id="@+id/sacntext"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/scantext"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:imeOptions="flagNoExtractUi"
-        android:lines="1"/>
+        android:hint="전광판에 나올 글을 입력해주세요"
+        android:lines="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/main_etext"/>
     <Button
         android:id="@+id/start_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/main_button"
         android:text="확인"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/color_btn"
+            android:layout_width="150dp"
+            android:height="150dp"
+            android:text="Color"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@drawable/main_button"
+            />
+        <Button
+            android:id="@+id/font_btn"
+            android:layout_width="150dp"
+            android:height="150dp"
+            android:text="Font"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@drawable/main_button"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="JungHoon's First Project V2.0"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:gravity="bottom"
+            android:textAlignment="center"
+            android:textSize="12dp"/>
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black"
-        android:visibility="invisible"/>
-    <TextView
-        android:id="@+id/movingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#ff32b1"
-        android:textSize="300dp"
-        android:layout_gravity="center"
-        android:text="loading"
-        android:visibility="invisible"/>
 
 
-</FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/led_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/movingText"
+        android:layout_width="2000dp"
+        android:layout_height="wrap_content"
+        android:textColor="#ff32b1"
+        android:textSize="300dp"
+        android:text="loading"
+        />
+
+    </FrameLayout>
