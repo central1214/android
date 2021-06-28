@@ -23,4 +23,17 @@
 
 ###LED_V2.0
  - Splash Activity 추가
- ![Splash.jpg](https://github.com/central1214/android/blob/main/Led_image/Splash.jpg?raw=true){: width="100" height="100"}
+ 
+ 
+ <img src = "/Led_image/Splash.jpg" width="20%" height="20%">
+ - main화면 더 이쁘게~
+ <img src = "/Led_image/MainView.jpg" width="20%" height="20%">
+ - 폰트 종류 변경 기능 추가
+ <img src = "/Led_image/Font_select.jpg" width="20%" height="20%">
+ - 폰트 색 변경 기능 추가
+ <img src = "/Led_image/ColorSelect.jpg" width="20%" height="20%">
+ - 출력화면
+ <img src = "/Led_image/View.jpg" width="20%" height="20%">
+ 
+
+
