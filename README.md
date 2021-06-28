@@ -32,8 +32,8 @@
  <img src = "/Led_image/Font_select.jpg" width="20%" height="20%">
  - 폰트 색 변경 기능 추가
  <img src = "/Led_image/ColorSelect.jpg" width="20%" height="20%">
- - 출력화면
- <img src = "/Led_image/View.jpg" width="20%" height="20%">
+ - 출력화면 ( 우에서 좌로 이동 점멸하면 이동!)
+ <img src = "/Led_image/View.jpg" width="40%" height="40%">
  
 
 
