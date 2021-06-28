@@ -15,8 +15,12 @@
  - 입력한 문자가 2문자 이상이면 잘려서 출력
    
 ### 2021.06.20 추가할 것들
- - 폰트 색상 선택
- - 폰트 종류 선택
+ - ~~폰트 색상 선택~~
+ - ~~폰트 종류 선택~~
  - ~~출력시 네비게이션바 숨김~~
- - 초기화면 디테일 
+ - ~~초기화면 디테일 ~~
  - ~~화면 출력시 가로 고정~~
+
+###LED_V2.0
+ - Splash Activity 추가
+ ![Splash.jpg](https://github.com/central1214/android/blob/main/Led_image/Splash.jpg?raw=true){: width="100" height="100"}
