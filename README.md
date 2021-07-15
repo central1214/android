@@ -21,7 +21,7 @@
  - ~~초기화면 디테일~~
  - ~~화면 출력시 가로 고정~~
 
-###LED_V2.0
+### LED_V2.0
  - Splash Activity 추가
  
  
@@ -35,5 +35,9 @@
  - 출력화면 ( 우에서 좌로 이동 점멸하면 이동!)
  <img src = "/Led_image/View.jpg" width="40%" height="40%">
  
+ ### LED_V2.1
+  - ColorPicker 개선
+  - git에서 구한 라이브러리 이용
+ <img src = "/Led_imgage/led_colorPicker.png" width="20%" height="20%">
 
 
