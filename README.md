@@ -37,7 +37,7 @@
  
  ### LED_V2.1
   - ColorPicker 개선
-  - git에서 구한 라이브러리 이용
+  - git외부 라이브러리 이용
  <img src = "/Led_image/led_colorPicker.png" width="20%" height="20%">
 
 
