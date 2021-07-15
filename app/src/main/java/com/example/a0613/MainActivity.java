@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -21,6 +22,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorSelectedListener;
+import com.flask.colorpicker.builder.ColorPickerClickListener;
+import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button startBtn;
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.pan);
         main = findViewById(R.id.pan);
         startBtn = findViewById(R.id.start_btn);
@@ -57,51 +64,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
         title.setTypeface(amatics);
+
+
 
         colorBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
+                ColorPickerDialogBuilder
+                        .with(MainActivity.this)
+                        .setTitle("색을 선택해 주세요")
+                        .initialColor(-65281)
+                        .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                        .density(12)
+                        .setOnColorSelectedListener(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(int selectedColor) {
 
-                View dialogView = getLayoutInflater().inflate(R.layout.color_dialog, null);
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setView(dialogView);
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                            }
+                        })
+                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                            @Override
+                            public void onClick(DialogInterface d, int SelectedColor, Integer[] allColors) {
+                                color = "#" + (Integer.toHexString(SelectedColor)).substring(2).toUpperCase();
+                                System.out.println(SelectedColor);
 
-                Button btn1 = alertDialog.findViewById(R.id.btn1);
-                Button btn2 = alertDialog.findViewById(R.id.btn2);
-                Button btn3 = alertDialog.findViewById(R.id.btn3);
-                Button btn4 = alertDialog.findViewById(R.id.btn4);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
-                btn1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        color = "#FF6200EE";
-                        alertDialog.dismiss();
-                    }
-                });
-                btn2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        color = "#D600EE";
-                        alertDialog.dismiss();
-                    }
-                });
-                btn3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        color = "#18EE00";
-                        alertDialog.dismiss();
-                    }
-                });
-                btn4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        color = "#00EED2";
-                        alertDialog.dismiss();
-                    }
-                });
+                            }
+                        })
+                        .build()
+                        .show();
 
             }
         });
@@ -231,5 +229,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.dispatchTouchEvent(ev);
     }
+
 
 }
