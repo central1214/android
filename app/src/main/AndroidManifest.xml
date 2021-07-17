@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a0613">
+    package="com.example.led">
 
     <application
         android:allowBackup="true"
@@ -11,18 +11,18 @@
         android:theme="@style/Theme.0613">
 
         <activity
-            android:name=".ledActivity"
+            android:name="com.example.led.ledActivity"
             android:screenOrientation="landscape"
             android:theme="@style/ledTheme" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.led.MainActivity"
             android:theme="@style/myTheme"
             android:screenOrientation="portrait">
         </activity>
 
         
         <activity
-            android:name=".startActivity"
+            android:name="com.example.led.startActivity"
             android:theme="@style/ledTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

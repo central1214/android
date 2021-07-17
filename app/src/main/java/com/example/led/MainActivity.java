@@ -1,4 +1,4 @@
-package com.example.a0613;
+package com.example.led;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,21 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.PaintDrawable;
+import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
@@ -69,13 +64,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        colorBtn.setOnClickListener(new Button.OnClickListener(){
+        colorBtn.setOnClickListener(new Button.OnClickListener(){ //ColorPicker Git 외부 라이브러리
             @Override
             public void onClick(View v) {
                 ColorPickerDialogBuilder
                         .with(MainActivity.this)
                         .setTitle("색을 선택해 주세요")
-                        .initialColor(-65281)
+                        .initialColor(-65281) //처음 선택된 색
                         .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
                         .density(12)
                         .setOnColorSelectedListener(new OnColorSelectedListener() {
@@ -103,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        fontBtn.setOnClickListener(new View.OnClickListener() {
+        fontBtn.setOnClickListener(new View.OnClickListener() { //Font 버튼 클릭 이벤트 (Custom Dialog)
             @Override
             public void onClick(View v) {
                 View fontDialog = getLayoutInflater().inflate(R.layout.font_dialog, null);
@@ -186,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        eText.setOnKeyListener(new View.OnKeyListener() {
+        eText.setOnKeyListener(new View.OnKeyListener() { //키보드에서 엔터 입력 시 startBtn 클릭 이벤트 생기게
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 switch (i){
@@ -200,12 +195,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void hidekeyboard(EditText et){
+    private void hidekeyboard(EditText et){ //키보드 숨기기
         InputMethodManager imm= (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
     }
     @Override
-    public void onClick(View v) {
+    public void onClick(View v) { // 확인 버튼 클릭 시 ledActivity로 eText, color, fontPath 데이터 전달
         if(v==startBtn){
             Intent intent = new Intent(MainActivity.this, ledActivity.class);
             intent.putExtra("printText",eText.getText().toString());
@@ -217,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
+    public boolean dispatchTouchEvent(MotionEvent ev) { //빈 화면 터치 시 키보드 숨기기
         View view = getCurrentFocus();
         if (view != null && (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE) && view instanceof EditText && !view.getClass().getName().startsWith("android.webkit.")) {
             int scrcoords[] = new int[2];
