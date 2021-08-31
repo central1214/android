@@ -25,7 +25,7 @@
  - Splash Activity 추가
  
  
- <img src = "/Led_image/Splash.jpg" width="20%" height="20%">
+ <img src = "/NeonSign/Led_image/Splash.jpg" width="20%" height="20%">
  - main화면 더 이쁘게~
  <img src = "/Led_image/MainView.jpg" width="20%" height="20%">
  - 폰트 종류 변경 기능 추가
